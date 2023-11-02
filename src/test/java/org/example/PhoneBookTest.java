@@ -44,12 +44,16 @@ class PhoneBookTest {
         assertNull(error);
 
     }
-@Test
+
+    @Test
     public void findByName() {
         phoneBook.add("Evgenii", 123124512);
         phoneBook.add("Dmitriy", 346787239);
 
-        String number = phoneBook.findByName("Dmitriy");
-        assertEquals(346787239,number);
+        int number = phoneBook.findByName("Dmitriy");
+        assertEquals(346787239, number);
+
+        int error = phoneBook.findByName("Mihail");
+        assertEquals(-1,error);
     }
 }

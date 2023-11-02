@@ -19,8 +19,11 @@ public class PhoneBook {
     public String findByNumber(int number){
         return revers.get(number);
     }
-    public String findByName(String name){
-        return null;
+    public int findByName(String name){
+       Integer number = map.get(name);
+       if (number != null){
+           return number;
+       } return -1;
     }
 }
 
