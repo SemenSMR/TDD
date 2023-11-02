@@ -12,6 +12,7 @@ public class PhoneBook {
         if (!map.containsKey(name)) {
             map.put(name, number);
             revers.put(number, name);
+            countAdd++;
         }
         return countAdd;
     }
@@ -29,7 +30,12 @@ public class PhoneBook {
     }
 
     public List<String> printAllNames() {
-        return null;
+        List<Map.Entry<String, Integer>> entryList = new ArrayList<>(map.entrySet());
+        entryList.sort(Comparator.comparing(Map.Entry::getKey));
+        List<String> sortedNames = new ArrayList<>();
+        for (Map.Entry<String, Integer> entry : entryList) {
+            sortedNames.add(entry.getKey());
+        } return sortedNames;
     }
 }
 
