@@ -3,7 +3,9 @@ package org.example;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -55,5 +57,20 @@ class PhoneBookTest {
 
         int error = phoneBook.findByName("Mihail");
         assertEquals(-1,error);
+    }
+    @Test
+    public void printAllNames() {
+
+        phoneBook.add("Evgenii", 123124512);
+        phoneBook.add("Dmitriy", 346787239);
+        phoneBook.add("Alina", 1254734223);
+        phoneBook.add("Dasha", 964515521);
+
+        List<String> result = phoneBook.printAllNames();
+
+        List<String> expected = Arrays.asList("Alina", "Dasha", "Dmitriy", "Evgenii");
+
+        assertEquals(expected,result);
+
     }
 }
