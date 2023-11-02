@@ -19,5 +19,8 @@ public class PhoneBook {
     public String findByNumber(int number){
         return revers.get(number);
     }
+    public String findByName(String name){
+        return null;
+    }
 }
 
